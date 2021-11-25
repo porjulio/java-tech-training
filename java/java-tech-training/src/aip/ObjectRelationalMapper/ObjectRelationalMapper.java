@@ -1,0 +1,80 @@
+package aip.ObjectRelationalMapper;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class ObjectRelationalMapper {
+
+	public static void main (String[] args) throws SQLException {
+
+		String link = "jdbc:mysql://localhost:3306/JBEDB";
+		String user = "root";
+		String password = "mysql";
+		
+		System.out.println("Enter a product ID: ");
+		Scanner in = new Scanner(System.in);
+		int rowCount = Integer.parseInt(in.nextLine());
+		in.close();
+		try {
+		Connection mySQLConnection = DriverManager.getConnection(link, user, password);
+		Statement selectStatement = mySQLConnection.createStatement();
+		ResultSet resultSet =  selectStatement.executeQuery("SELECT * FROM PRODUCTS WHERE PRODUCT_ID="+rowCount+")");
+		ArrayList<Product> productArrayList = new ArrayList<Product>();
+		
+		int productId = resultSet.getInt("PRODUCT_ID");
+		String productName = resultSet.getString("PRODUCT_NAME");
+		float price = resultSet.getFloat("PRICE");
+		
+		while(resultSet.next()) {
+			
+			Product product = new Product(productId, productName, price); //(resultSet.getInt("PRODUCT_ID"), resultSet.getString("PRODUCT_NAME"),resultSet.getFloat("PRICE"));
+//			System.out.println(productId + "  >  "+productName+"  >  "+price);
+			productArrayList.add(product);
+		}
+//		return productArrayList;
+		
+		}catch (SQLException sqlException) {
+			System.out.println("DATABASE CONNECTION ISSUE " + sqlException);
+		}
+}
+	
+//	public class ProductsArrayList {
+//		public void main(String[] args) {
+//			Product bookProduct = new Product(1, "limitless", 50.5f);
+//			ArrayList<Product> productsArrayList = getProductsArrayList();
+//			for(Product product : productsArrayList) {
+//				product.displayDetails();
+//			}
+//		}
+
+		public ArrayList<Product> getProductsArrayList() {
+			ArrayList<Product> productsArrayList = new ArrayList<Product>();
+//			Product limitless = new Product(1, "limitless", 50.5f);
+//			Product power = new Product(1, "pow of now", 50.5f);
+//			productsArrayList.add(limitless);
+//			productsArrayList.add(power);
+			return productsArrayList;
+		}
+	}
+
+	class Product {
+		public int productId;
+		public String productName;
+		public float price;
+		public Product(int productId, String productName, float price) {
+			super();
+			this.productId = productId;
+			this.productName = productName;
+			this.price = price;
+		}
+
+	   public void displayDetails() {
+		   //System.out.println(productId + "  >>>  "+productName+"  >>>  "+price);
+	   }
+
+	}

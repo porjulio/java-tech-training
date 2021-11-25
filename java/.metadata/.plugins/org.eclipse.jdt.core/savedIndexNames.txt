@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\Kevin Lawrence\Desktop\java-tech-training\java\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2672226562.index
+3356494275.index
+1780374120.index
+372067957.index

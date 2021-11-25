@@ -1,0 +1,45 @@
+package aip;
+import java.util.Scanner;
+
+public class exampleScanner {
+	class Products {
+		String productName;
+		float productPrice;
+		String productBrand;
+		String productColor;
+		Scanner keyScanner = new Scanner(System.in);
+		void acceptDetails () {
+		
+			
+		System.out.println("Enter Name: ");	
+		String msgName = keyScanner.nextLine();
+		productName = msgName;
+		
+		System.out.println("Enter Price: ");	
+		String msgPrice = keyScanner.nextLine();
+		productPrice = Float.parseFloat(msgPrice);
+		
+		System.out.println("Enter Brand: ");	
+		String msgBrand = keyScanner.nextLine();
+		productBrand = msgBrand;
+		
+		System.out.println("Enter Color: ");	
+		String msgColor = keyScanner.nextLine();
+		productColor = msgColor;
+		keyScanner.close();
+		}
+		
+		void printDetails () {
+		System.out.println("Name: " + productName);
+		System.out.format("Price: %.2f", productPrice);
+		System.out.println("\nBrand: " + productBrand);
+		System.out.println("Color: " + productColor);
+		}
+	}
+
+	public static void main(String[] args) {
+		Products viewProducts = new Products();
+		viewProducts.acceptDetails();
+		viewProducts.printDetails();
+	 }	
+}

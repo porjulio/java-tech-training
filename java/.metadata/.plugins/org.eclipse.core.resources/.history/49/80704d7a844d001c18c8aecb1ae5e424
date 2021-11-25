@@ -1,0 +1,44 @@
+package aip.CityTracker;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class CityTracker {
+	public static void main(String[] args) {
+		String cities[] = new String[5];
+		String temp;
+		int count;
+		char choice;
+		Scanner city = new Scanner(System.in);
+		Scanner choose = new Scanner(System.in);
+		ArrayList<String> cityTracker = new ArrayList<String>();
+		
+		//do {
+		System.out.println("Please enter 5 cities:");
+		for(int i = 0; i < 5; i++) {
+			System.out.print("Enter city: ");
+			cities[i] = city.nextLine();
+			}
+		city.close();
+		//arrange alphabetically
+		for (int i = 0; i < 5; i++) 
+        {
+            for (int j = i + 1; j < 5; j++) { 
+                if (cities[i].compareToIgnoreCase(cities[j])>0) 
+                {
+                    temp = cities[i];
+                    cities[i] = cities[j];
+                    cities[j] = temp;
+                }
+            }
+            cityTracker.add(cities[i]);
+        }
+		System.out.println(cityTracker);
+		//reverse alphabetical
+		for (int i = 4; i >= 0; i--) 
+        {
+			System.out.println(cityTracker.get(i));
+        }
+		//}while(choice=='y');
+	}
+}

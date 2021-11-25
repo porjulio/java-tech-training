@@ -1,0 +1,31 @@
+stand alone desktop app - main method
+web app using servlets 
+apache is a web server
+client is web browser
+
+browser sends http request to the server
+server processes it thru servlets
+
+http is used to transfer html docs
+
+select statement is query
+
+dml data modification/manipulation language is update
+
+any computer that has jre(java runtime engine/environment) can run jvm
+
+JDK (JAVAC)
+program.java - src code
+compiler - turns into program.class(byte code)
+
+class files can be put in a jar
+
+jre - the environment where the java program executes
+jvm - the program executes (byte code is translated to machine language) during runtime
+
+
+all the libraries will be provided by jre to the jvm
+
+jre and jvm is part of jdk. jdk=jre+development tools
+
+

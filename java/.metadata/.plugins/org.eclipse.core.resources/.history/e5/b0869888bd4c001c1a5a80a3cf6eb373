@@ -1,0 +1,42 @@
+package aip;
+import java.util.Scanner;
+
+public class Calculator {
+	public static void main (String[] args) {
+		Scanner input = new Scanner(System.in);
+		double num, entry;
+		int a,operation;
+		do {
+		System.out.println("How many numbers do you wish to input?: ");
+		a = input.nextInt();
+		
+		System.out.println("What operation do you wish to use?\n[1] Addition\n[2] Subtraction\n[3] Multiplication\n[4] Division\nEnter a number [1-4]: ");
+		operation = input.nextInt();
+		if(operation > 4 || operation < 1) {
+			System.out.println("Invalid Input! [1-4] only!");
+			System.exit(0);
+			}
+		}while(operation > 4 || operation < 1);
+		
+		for(int i=1;i<a+1;i++) {
+			System.out.println("Enter number " + i +": ");
+			entry = input.nextDouble();
+			num = entry;
+			switch (operation) {
+			 case 1: num = num + entry;
+					break;
+			 case 2: num = entry;
+					num = num - entry;
+					break;
+			 case 3: num = num * entry;
+					break;
+			 case 4: num = num / entry;
+					break;
+			 default: break;
+			}
+		}
+		input.close();
+		System.out.println("The result is: " + String.format("%.2f",num));
+		System.exit(0);
+	}
+}

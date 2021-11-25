@@ -1,0 +1,20 @@
+uniform
+resource
+locator
+
+url: http//localhost:8080/Id-servlets-jsp
+
+parts of url:
+protocol: browser uses to make requests
+domain name/server:
+port:
+web application/ web context:
+servlet mapping : string that is get mapped to the servlet using service()
+
+
+browser submits url to server http request
+browser sends http request and server receives http servlet request
+server
+server sends http response
+
+server will read the request and send the response

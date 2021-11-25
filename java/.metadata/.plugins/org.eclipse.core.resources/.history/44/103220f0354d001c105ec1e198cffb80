@@ -1,0 +1,73 @@
+package aip;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+import java.sql.ResultSet;
+
+public class CRUDSample {
+	String link = "jdbc:mysql://localhost:3306/JBEDB";
+	String user = "root";
+	String password = "mysql";
+	int rowCount;
+	Scanner in = new Scanner(System.in);
+	
+	
+	public Connection Connect() throws SQLException {
+		Connection mySQLConnection = DriverManager.getConnection(link, user, password);
+		return mySQLConnection;
+	}
+	
+	
+	public void Select() {
+		try {
+//			Connect();
+//		Connection mySQLConnection = DriverManager.getConnection(link, user, password);
+		Connection mySQLConnection = Connect();
+		Statement selectStatement = mySQLConnection.createStatement();
+		System.out.println("EXECUTING QUERY AND OBTAINING RESULTSET");
+		ResultSet resultSet =  selectStatement.executeQuery("SELECT * FROM PRODUCTS");
+		System.out.println("ITERATING THROUGH THE RESULT SET AND FETCHING THE ROWS");
+		
+		while(resultSet.next()) {
+			int productId = resultSet.getInt("PRODUCT_ID");
+			String productName = resultSet.getString("PRODUCT_NAME");
+			float price = resultSet.getFloat("PRICE");
+			System.out.println(productId + "  >  "+productName+"  >  "+price);
+		}
+	}catch (SQLException sqlException) {
+		System.out.println("DATABASE CONNECTION ISSUE " + sqlException);
+	}
+	}
+	
+	public void Insert() {
+		try {
+			Connection mySQLConnection = Connect();
+			Statement insertStatement = mySQLConnection.createStatement();
+//			 rowCount = insertStatement.executeUpdate("INSERT INTO PRODUCTS VALUES (4, 'LOY',780.50)");
+//			rowCount = rowCount + insertStatement.executeUpdate("INSERT INTO PRODUCTS VALUES (5, 'HP',780.50)");
+//			if(rowCount!=0) {
+//				System.out.println("Inserted : " + rowCount);
+//			}
+//			else {
+//				System.out.println("No Rows Inserted!");
+//			}
+		}catch (SQLException sqlException) {
+			System.out.println("DATABASE CONNECTION ISSUE " + sqlException);
+		}
+
+	}
+	
+	public void Update() {
+		try {
+			Connection mySQLConnection = Connect();
+			Statement updateStatement = mySQLConnection.createStatement();
+			
+		} catch (SQLException sqlException) {
+			System.out.println("DATABASE CONNECTION ISSUE " + sqlException);
+	}
+}
+}
+
