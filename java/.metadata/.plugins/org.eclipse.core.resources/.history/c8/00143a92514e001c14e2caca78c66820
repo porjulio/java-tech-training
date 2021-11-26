@@ -1,0 +1,13 @@
+package com.gbs;
+
+public class UserActivity {
+	
+
+
+class AdminUser {
+
+}
+class NormalUser {
+
+}
+}

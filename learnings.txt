@@ -28,4 +28,4 @@ all the libraries will be provided by jre to the jvm
 
 jre and jvm is part of jdk. jdk=jre+development tools
 
-
+static methods
