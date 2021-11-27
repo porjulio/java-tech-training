@@ -1,5 +1,5 @@
 package Servlet;
-// java.lang.* gets imported by default
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -38,10 +38,10 @@ public class SelectServlet extends HttpServlet {
 			ResultSet resultSet =  selectStatement.executeQuery(queryString);
 
 			boolean found = false;
-			out.println("<table class=\"table table-dark table-striped\"><tr><th>Product ID</th><th>Name</th><th>Price</th></tr>");
+			out.println("<table class=\"table table-dark table-striped\"><tr><th>User ID</th><th>Userame</th><th>User Password</th><th>Creation Date</th><th>Number of Accounts</th><th>Account Number</th><th>Total Balance</th><th>Contact Number</th></tr>");
 			while(resultSet.next()) {
-				int userId = resultSet.getInt("PRODUCT_ID");
-				String userName = resultSet.getString("PRODUCT_NAME");
+				int userId = resultSet.getInt("USER_ID");
+				String userName = resultSet.getString("USER_NAME");
 				String userPassword = resultSet.getString("USER_PASSWORD");
 				String creationDate = resultSet.getString("CREATION_DATE");
 				int numberOfAccounts = resultSet.getInt("NUMBER_OF_ACCOUNTS");
