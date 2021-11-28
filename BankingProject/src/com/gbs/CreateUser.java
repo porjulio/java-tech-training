@@ -1,17 +1,10 @@
 package com.gbs;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
 public class CreateUser {
-	public Connection connect() throws SQLException {
-		Connection myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JBEDB", "root", "mysql");
-		return myConnection;
-	}
 
 	void createAccount() {
 		Scanner in = new Scanner(System.in);
@@ -22,14 +15,16 @@ public class CreateUser {
 		System.out.print("\nCONTACT NO.: ");
 		String contact = in.nextLine();
 		System.out.print("\nAMOUNT TO BE DEPOSITED: ");
-		Double amount =in.nextDouble();
+		float amount = Float.parseFloat(in.nextLine());
+		DbConnection db = new DbConnection();
+		
 		System.out.println("\nCREATING ACCOUNT PLEASE WAIT...");
 		try {
 
-			Statement insertStatement = connect().createStatement();
+			Statement insertStatement = db.connect().createStatement();
 
-			String queryString = "INSERT INTO USERS(USER_NAME,PASSWORD,CREATION_DATE,TOTAL_BALANCE,CONTACT_NUMBER) VALUES ("
-					+ "'" + username + "','" + password + "',now()," + amount + ",'" + contact + "'" + ")";
+			String queryString = "INSERT INTO USERS(USER_ID,USER_NAME,USER_PASSWORD,CREATION_DATE,TOTAL_BALANCE,CONTACT_NUMBER) VALUES (UUID_SHORT()"
+					+ ",'" + username + "','" + password + "',now()," + amount + ",'" + contact + "'" + ")";
 			int rowCount = insertStatement.executeUpdate(queryString);
 			if (rowCount != 0) {
 				System.out.println("SUCCESSFULLY CREATED!");
@@ -41,5 +36,6 @@ public class CreateUser {
 		} catch (SQLException sqlException) {
 			System.out.println("DATABASE CONNECTION ISSUE " + sqlException);
 		}
+		in.close();
 	}
 }
