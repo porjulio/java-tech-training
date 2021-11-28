@@ -3290,3 +3290,15 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 10:04:59.755
 !MESSAGE executing callback sts4.classpath.fpFfEdON SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 13:21:22.631
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.fpFfEdON
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 13:21:22.632
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.fpFfEdON
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 13:21:22.633
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 13:21:22.634
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.fpFfEdON => OK
