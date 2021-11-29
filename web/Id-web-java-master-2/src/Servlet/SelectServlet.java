@@ -43,18 +43,18 @@ public class SelectServlet extends HttpServlet {
 			//print all data in table
 			ResultSet resultSet =  selectStatement.executeQuery(queryString);
 
-			boolean found = false;
-			out.println("<table class=\"table table-dark table-striped\"><tr><th>User ID</th><th>Userame</th><th>User Password</th><th>Creation Date</th><th>Number of Accounts</th><th>Account Number</th><th>Total Balance</th><th>Contact Number</th></tr>");
+//			boolean found = false;
+			out.println("<table class=\"table table-dark table-striped\"><tr><th>User ID</th><th>Userame</th><th>Creation Date</th><th>Number of Accounts</th><th>Account Number</th><th>Total Balance</th><th>Contact Number</th></tr>");
 			while(resultSet.next()) {
-				int userId = resultSet.getInt("USER_ID");
+				String userId = resultSet.getString("USER_ID");
 				String userName = resultSet.getString("USER_NAME");
-				String userPassword = resultSet.getString("USER_PASSWORD");
+//				String userPassword = resultSet.getString("USER_PASSWORD");
 				String creationDate = resultSet.getString("CREATION_DATE");
 				int numberOfAccounts = resultSet.getInt("NUMBER_OF_ACCOUNTS");
 				int accountNumber = resultSet.getInt("ACCOUNT_NUMBER");
 				float totalBalance = resultSet.getFloat("TOTAL_BALANCE");
 				String contactNumber = resultSet.getString("CONTACT_NUMBER");
-				out.println("<tr><td>" + userId + "</td><td>" + userName + "</td><td>" + userPassword  + "</td><td>" + 
+				out.println("<tr><td>" + userId + "</td><td>" + userName + "</td><td>" + "</td><td>" + 
 				creationDate + "</td><td>" + numberOfAccounts + "</td><td>" + accountNumber + "</td><td>" + 
 						totalBalance + "</td><td>" + contactNumber + "</td></tr>");
 		}
