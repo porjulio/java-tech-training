@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="C:\Users\Kevin Lawrence\Desktop\java-tech-training\java" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="C:\Users\Kevin Lawrence\Desktop\software\apache-tomcat-9.0.55\lib" key="org.eclipse.jdt.ui.lastextjar"/>
 	<section name="RefactoringWizard.preview">
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
@@ -13,7 +13,7 @@
 		<item value="false" key="updateTextualMatches"/>
 	</section>
 	<section name="ClasspathContainerSelectionPage">
-		<item value="2" key="index"/>
+		<item value="3" key="index"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>

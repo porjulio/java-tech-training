@@ -29,3 +29,8 @@ all the libraries will be provided by jre to the jvm
 jre and jvm is part of jdk. jdk=jre+development tools
 
 static methods
+
+string vs string buffer
+-----------------------------
+stringBuffer is mutable and faster
+string is immutable
