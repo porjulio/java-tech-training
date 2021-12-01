@@ -34,3 +34,75 @@ string vs string buffer
 -----------------------------
 stringBuffer is mutable and faster
 string is immutable
+
+========================================
+springboot (spring framework)
+(from backend)
+-> hibernate framework <- {java class, jdbc internally}
+--> object relational mapping <--
+
+-> spring boot (spring framework) <-
+-->> main() --> servlets internally <<--
+--> tomcat acts as jvm
+
+-> browser as JSON/HTML <-
+===================================
+>>Steps (spring boot crud)<<
+1. create spring boot web application
+2. file > new > spring starter proj
+3. Name ld-spring-boot-rest-crud
+4. Type: Maven, java version: 8
+5. group: dem
+6. Name in 3, description Demo proj for spring Boot
+7. package dem
+8. spring boot version 2.5.7
+9. finish
+10. src/main/java
+11. java project created by maven tool,
+reason for 10
+12. all jar tools are handled by maven
+13. pom.xml is where you write the dependencies
+14. in pom.xml
+<parent><version>2.1.13.REALEASE</verison></parent>
+
+15. <dependencies>
+	<dependeny>
+		<groupID>mysql</groupID>
+		<artifactID>mysql-connector-java</artifact></dependency>
+16. spring framework is integrating with hibernate framework
+hibernate dependency
+<groupID>org.springframework.boot</groupID>
+<artifactID>spring-boot-starter</>
+
+17. TOMCAT DEPENDENCY
+<groupID>org.springframework.boot</groupID>
+<artifactID>spring-boot-starter-web</>
+
+18. src/main/resources
+#database connection properties:
+spring.datasource.url=jdbc:mysql://localhost:3306/GBSDBV1
+spring.datasource.username=root
+spring.datasource.password=mysql
+
+#hibernate to speak to mysql
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+
+#hibernate ddl generation strategy
+spring.jpa.hibernate.ddl-auto=update
+
+#context path
+server.servlet.context-path=/ecz
+
+#server port
+server.port=9090
+
+
+
+ 
+
+
+
+
+
+
+

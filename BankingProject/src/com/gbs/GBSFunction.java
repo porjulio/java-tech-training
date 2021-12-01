@@ -119,7 +119,7 @@ public class GBSFunction {
 			System.out.println("DATABASE CONNECTION ISSUE " + sqlException);
 		}
 		scanner.close();
-		System.out.println("Thank you for banking with us!");
+//		System.out.println("Thank you for banking with us!");
 	}
 	
 	void userMenu(String userName) {
@@ -158,7 +158,7 @@ public class GBSFunction {
 						System.out.println("Invalid input!");
 						break;
 					}
-				} while (choice != 5);
+				} while (choice < 5);
 				scanner.close();
 				}
 
