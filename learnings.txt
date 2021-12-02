@@ -44,6 +44,7 @@ springboot (spring framework)
 -> spring boot (spring framework) <-
 -->> main() --> servlets internally <<--
 --> tomcat acts as jvm
+--> controller returns html/jason
 
 -> browser as JSON/HTML <-
 ===================================
@@ -72,11 +73,13 @@ reason for 10
 16. spring framework is integrating with hibernate framework
 hibernate dependency
 <groupID>org.springframework.boot</groupID>
-<artifactID>spring-boot-starter</>
+<artifactID>spring-boot-starter-data-jpa</>
 
 17. TOMCAT DEPENDENCY
 <groupID>org.springframework.boot</groupID>
 <artifactID>spring-boot-starter-web</>
+
+org.springframework.boot//
 
 18. src/main/resources
 #database connection properties:
@@ -95,14 +98,55 @@ server.servlet.context-path=/ecz
 
 #server port
 server.port=9090
+===========================================
+accessor or getter and setter
 
+private int productID;
+public int getProductId(){
+return productID;}
 
+public void setProductName(String productName) {
+this.productName = productName;}
 
- 
+model/bean - java class with getters/setters (properties)
+entity model/bean - mode/bean connected to the db
+====================================
+@Entity 
+@Table(name="tb_name")
 
+@Column(name="column_name")
+===================================
+@RestController
+@RequestMapping("/api")
+@GetMapping("/something")
+===================================
+JSON - javascript object notation
+-> lightweight data-interchange format
+=====================================
 
+implementation is being taken care of hibernate
 
+interfaces can match with different implementations
+=================================================
+Spring will automatically instantiate the repository
+@Autowired
 
+spring framework creates the instance of repository
+===============================================
+browser[http verbs]
+-get
+-post
+-put
+-delete
 
+java [java methods]
+-get
+-add
+-update
+-delete
 
-
+mysql[sql queries]
+-select
+-insert
+-update
+-delete
