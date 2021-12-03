@@ -1,4 +1,4 @@
-package dem;
+package dem.UserInfo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,9 +13,11 @@ public class UserInfo {
 	@Id
 	@Column(name="USER_ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String userIdString;
+	private Long userId;
 	@Column(name="USER_NAME")
 	private String userNameString;
+	@Column (name="USER_PASSWORD")
+	private String userPassword;
 	@Column(name="CREATION_DATE")
 	private String creationDateString;
 	@Column(name="NUMBER_OF_ACCOUNTS")
@@ -31,11 +33,12 @@ public class UserInfo {
 		super();
 	}
 
-	public UserInfo(String userIdString, String userNameString, String creationDateString, Integer numberOfAccounts,
+	public UserInfo(Long userId, String userNameString, String userPassword, String creationDateString, Integer numberOfAccounts,
 			String accountNumberString, Float totalBalance, String contactNumber) {
 		super();
-		this.userIdString = userIdString;
+		this.userId = userId;
 		this.userNameString = userNameString;
+		this.userPassword = userPassword;
 		this.creationDateString = creationDateString;
 		this.numberOfAccounts = numberOfAccounts;
 		this.accountNumberString = accountNumberString;
@@ -43,12 +46,12 @@ public class UserInfo {
 		this.contactNumber = contactNumber;
 	}
 
-	public String getUserIdString() {
-		return userIdString;
+	public Long getuserId() {
+		return userId;
 	}
 
-	public void setUserIdString(String userIdString) {
-		this.userIdString = userIdString;
+	public void setuserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public String getUserNameString() {
@@ -57,6 +60,14 @@ public class UserInfo {
 
 	public void setUserNameString(String userNameString) {
 		this.userNameString = userNameString;
+	}
+	
+	public String getUserPassword() {
+		return userPassword;
+	}
+	
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 
 	public String getCreationDateString() {
@@ -98,7 +109,5 @@ public class UserInfo {
 	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
-	
-	
-}
+}	
 

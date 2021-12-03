@@ -133,10 +133,11 @@ Spring will automatically instantiate the repository
 
 spring framework creates the instance of repository
 ===============================================
+Mapping:
 browser[http verbs]
 -get
--post
--put
+-post (create)
+-put (update)
 -delete
 
 java [java methods]
