@@ -151,3 +151,42 @@ mysql[sql queries]
 -insert
 -update
 -delete
+======================
+Relational to object [
+
+object to json [rest api]
+==========================
+
+monolithic architecture
+>> 1 big application
+>> 1 jvm
+>> scaling is expensive
+>> heavy resources
+>> connected to 1 db
+
+microservices architecture [variant of service-oriented architecture]
+>> smallest service that does 1 task and does it really well
+>> scalability is light
+>> load directly proportional to service
+>> each microservice runs in it's own jvm
+>> each ms has it's own db
+>> individually deployed
+>> faster time to market
+
+
+
+
+SOA >> service-oriented architecture
+>>
+
+-----------------------
+Eureka Server
+Feign Client
+Rest Template
+Hysterix Circuit Breaker
+=====================================
+
+make response object
+==================================
+
+
